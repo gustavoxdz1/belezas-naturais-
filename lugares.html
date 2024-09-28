@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicações de Lugares</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Indicações de Lugares na Turquia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="capadocia.html">Capadócia</a></li>
+                <li><a href="pamukkale.html">Pamukkale</a></li>
+                <li><a href="egeu.html">Mar Egeu</a></li>
+                <li><a href="lugares.html">Lugares para Visitar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Lugares Imperdíveis na Turquia</h2>
+        <ul>
+            <li><strong>Istanbul</strong>: A vibrante cidade onde o oriente encontra o ocidente, famosa por suas mesquitas, bazares e o impressionante Hagia Sophia.</li>
+            <li><strong>Efeso</strong>: Ruínas antigas que já foram o centro da civilização greco-romana, com a famosa Biblioteca de Celso e o Templo de Artemis.</li>
+            <li><strong>Monte Nemrut</strong>: Um sítio arqueológico com enormes estátuas de pedra construídas por um rei do antigo reino de Comagena.</li>
+            <li><strong>Ilhas Príncipe</strong>: Um refúgio tranquilo e pitoresco perto de Istambul, com praias e trilhas sem tráfego de carros.</li>
+            <li><strong>Antália</strong>: Cidade litorânea na Riviera Turca, conhecida por suas praias, ruínas antigas e vida noturna vibrante.</li>
+        </ul>
+
+        <h3>Mapa Interativo</h3>
+        <div id="mapa" style="height: 500px; width: 100%;"></div>
+    </section>
+
+    <script>
+        var map = L.map('mapa').setView([39.9334, 32.8597], 6); 
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([41.0082, 28.9784]).addTo(map)
+            .bindPopup('Istambul')
+            .openPopup();
+
+        L.marker([37.939167, 27.341944]).addTo(map)
+            .bindPopup('Efeso');
+
+        L.marker([37.9807, 32.5098]).addTo(map)
+            .bindPopup('Monte Nemrut');
+
+        L.marker([40.864759, 29.118683]).addTo(map)
+            .bindPopup('Ilhas Príncipe');
+
+        L.marker([36.8969, 30.7133]).addTo(map)
+            .bindPopup('Antália');
+    </script>
+    <footer>
+        <p>
+            &copy;Feito por Marcio Gustavo/Felipe Serrao 
+        </p>
+    </footer>
+</body>
+</html>
+
